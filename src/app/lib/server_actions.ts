@@ -70,7 +70,7 @@ export const getUsersWithCompany = async () => {
 
 export const getUsersWithCompanyName = async (name: string) => {
   const data = await prisma.user.findMany({
-    where: { name },
+    where: { categories: { some: { name } } },
     select: {
       id: true,
       name: true,
@@ -79,5 +79,6 @@ export const getUsersWithCompanyName = async (name: string) => {
       categories: { select: { name: true } },
     },
   });
+
   return data;
 };

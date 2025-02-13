@@ -18,6 +18,7 @@ export async function DELETE(request: Request) {
       return NextResponse.json({ error: "no such company " }, { status: 400 });
     }
     //delete all records pretaning to that company
+    //this will not work in mongo(works in sql) have to lookup
     //TODO : - figure out how to delete ref from user
     // company.UserIDs.forEach(async (userId) => {
     //   const usr = await prisma.user.findUnique({ where: { id: userId } });
