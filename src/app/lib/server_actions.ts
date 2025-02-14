@@ -69,16 +69,14 @@ export const getUsersWithCompany = async () => {
 };
 
 export const getUsersWithCompanyName = async (name: string) => {
-  const data = await prisma.user.findMany({
-    where: { categories: { some: { name } } },
+  const data = await prisma.company.findMany({
+    where: { name },
     select: {
       id: true,
       name: true,
-      email: true,
-      phoneNumber: true,
-      categories: { select: { name: true } },
+      city: true,
+      categories: { select: { name: true, phoneNumber: true } },
     },
   });
-
   return data;
 };
