@@ -2,7 +2,7 @@ this project is created using nextjs
 "steps to run"
 npm install to install all dependencies
 npx prisma generate generate prisma client
-if you dont have mongodb running start docker container by docker compose up -d
+start mongodb docker container by docker compose up -d
 use "npm run dev" to start development server
 i have used prisma as an orm and mongodb as database
 .env file looks like this >> DATABASE_URL="mongodb://localhost:27017/assesment_db"
